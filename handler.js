@@ -21,17 +21,17 @@ app.get("/users/:userId", async function (req, res) {
     const { Item } = await dynamoDbClient.get(params).promise();
     if (Item) {
       const { userId, name } = Item;
-      console.log('trying to query for user id: '+ req.params.userId +' success');
+      console.log('Trying to query for user id: '+ req.params.userId +' success');
       res.json({ userId, name });
     } else {
-      console.log('trying to query for user id: '+ req.params.userId +' not found');
+      console.log('Trying to query for user id: '+ req.params.userId +' not found');
       res
         .status(404)
         .json({ error: 'Could not find user with provided "userId"' });
     }
   } catch (error) {
     console.log(error);
-    console.log('trying to query for user id: '+ req.params.userId +' failed');
+    console.log('Trying to query for user id: '+ req.params.userId +' failed');
     res.status(500).json({ error: "Could not retreive user" });
   }
 });
@@ -66,7 +66,7 @@ app.post("/users", async function (req, res) {
 
 app.use((req, res, next) => {
   return res.status(404).json({
-    error: "Not Found",
+    error: "Not Found, try again",
   });
 });
 

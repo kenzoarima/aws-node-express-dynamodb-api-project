@@ -7,6 +7,6 @@
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {
-    "serverless-newrelic-lambda-layers": "^3.3.5"
+    "serverless-newrelic-lambda-layers": "^3.4.3"
   }
 }
